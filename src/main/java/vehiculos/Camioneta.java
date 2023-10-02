@@ -17,7 +17,7 @@ public class Camioneta extends Vehiculo{
 	}
 		
 	public Camioneta() {
-		this(null, 0, 90, null, 0, 0, "4X4", null, null);
+		this(null, 0, null, 0, 0, null, null);
 	}
 		
 	public static int cantidadCamionetas() {
@@ -27,8 +27,16 @@ public class Camioneta extends Vehiculo{
 	public boolean isVolco() {
 		return volco;
 	}
+	
+	public static Array<Camioneta> getListado(){
+		return listado;
+	}
 		
 	public void isVolco(boolean overturn) {
 		this.volco = overturn;
+	}
+	
+	public static void setListado(Array<Camioneta> list) {
+		Camioneta.listado = list;
 	}
 }

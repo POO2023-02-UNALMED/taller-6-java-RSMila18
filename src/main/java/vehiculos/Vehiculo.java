@@ -26,11 +26,11 @@ public class Vehiculo {
 	
 	public Vehiculo() {CantidadVehiculos++;}
 	
-	public Strung vehiculosPorTipo() {
+	public String vehiculosPorTipo() {
 		return "Automoviles: " + Automovil.cantidadAutomoviles() + "\n"
 				"Camionetas: " + Camioneta.cantidadCamionetas() + "\n"
 				"Camiones: " + Camion.cantidadCamiones();
-		}
+	}
 	
 	public String getPlaca() {
 		return placa;

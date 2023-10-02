@@ -17,7 +17,7 @@ public class Camion extends Vehiculo{
 	}
 	
 	public Camion() {
-		this(null, 2, 80, null, 0, 0, "4X2", null, null);
+		this(null, null, 0, 0, null, null);
 	}
 	
 	public static int cantidadCamiones() {
@@ -28,7 +28,15 @@ public class Camion extends Vehiculo{
 		return ejes;
 	}
 	
+	public static Array<Camion> getListado(){
+		return listado;
+	}
+	
 	public void setEjes(int axles) {
 		this.ejes = axles;
+	}
+	
+	public static void setListado(Array<Camion> list) {
+		Camion.listado = list;
 	}
 }

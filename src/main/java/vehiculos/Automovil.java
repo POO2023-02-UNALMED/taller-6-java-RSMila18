@@ -18,7 +18,7 @@ public class Automovil extends Vehiculo{
 	}
 	
 	public Automovil() {
-		this(null, 4, 100, null, 0, 0, "FWD", null, null);
+		this(null, null, 0, 0, null, null);
 	}
 	
 	public static int cantidadAutomoviles() {
@@ -29,7 +29,15 @@ public class Automovil extends Vehiculo{
 		return puestos;
 	}
 	
+	public static Array<Automovil> getListado(){
+		return listado;
+	}
+	
 	public void setPuestos(int position) {
 		this.puestos = position;
+	}
+
+	public static void setListado(Array<Automovil> list) {
+		Automovil.listado = list;
 	}
 }
