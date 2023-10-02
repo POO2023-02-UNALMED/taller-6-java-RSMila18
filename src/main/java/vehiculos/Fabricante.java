@@ -11,7 +11,7 @@ public class Fabricante {
 	}
 	
 	public Fabricante() {
-		this(null, null)
+		this(null, null);
 	}
 	
 	public String getNombre() {

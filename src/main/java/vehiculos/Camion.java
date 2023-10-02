@@ -31,6 +31,4 @@ public class Camion extends Vehiculo{
 	public void setEjes(int axles) {
 		this.ejes = axles;
 	}
-	
-
 }
