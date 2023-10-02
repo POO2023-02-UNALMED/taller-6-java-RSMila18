@@ -27,9 +27,9 @@ public class Vehiculo {
 	public Vehiculo() {CantidadVehiculos++;}
 	
 	public String vehiculosPorTipo() {
-		return "Automoviles: " + Automovil.cantidadAutomoviles() + "\n" +
-				"Camionetas: " + Camioneta.cantidadCamionetas() + "\n" +
-				"Camiones: " + Camion.cantidadCamiones();
+		return "Automoviles: " + Automovil.getCantidadAutomoviles() + "\n" +
+				"Camionetas: " + Camioneta.getCantidadCamionetas() + "\n" +
+				"Camiones: " + Camion.getCantidadCamiones();
 	}
 	
 	public String getPlaca() {
@@ -64,6 +64,10 @@ public class Vehiculo {
 		return fabricante;
 	}
 	
+	public static int getCantidadVehiculos() {
+		return CantidadVehiculos;
+	}
+	
 	public void setPlaca(String plate) {
 		this.placa = plate;
 	}
@@ -95,6 +99,4 @@ public class Vehiculo {
 	public void setFabricante(Fabricante maker) {
 		this.fabricante = maker;
 	}
-
-
 }
