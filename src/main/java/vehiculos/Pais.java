@@ -3,38 +3,35 @@ import java.util.*;
 
 public class Pais {
 	
-	protected String nombre;
-	protected int countPais;
-	private static Pais winCountry;
-	protected static List<Pais> listado = new Arraylist<>();
+	private String nombre;
+	protected int VecesPais;
+	private static Pais elegido;
+	protected static List<Pais> listado = new ArrayList<>();
 	
-	public Pais(String name) {
-		this.nombre = name;
-	}
-	
-	public Pais() {
-		this(null);
-	}
-	
-	public String getNombre() {
-		return nombre;
+	public Pais(String nombre) {
+		this.nombre=nombre;
+		listado.add(this);
 	}
 	
 	public int getCantidadVeces() {
-		return countPais;
+		return VecesPais;
+	}
+
+	public String getNombre() {
+		return this.nombre;
 	}
 	
 	public static Pais paisMasVendedor() {
-		for(int i = 0; i < (Pais.listado.size())-1; i++) {
-			Pais MasVendido1 = Pais.listado.get(0);
-			Pais MasVendido2 = Pais.listado.get(i+1);
-			if(MasVendido1.getCantidadVeces() < MasVendido2.getCantidadVeces()) {
-				winCountry = MasVendido2;
+		for(int i=0; i<(Pais.listado.size())-1;i++ ) {
+			Pais MasVendido1=Pais.listado.get(0);
+			Pais Masvendido2=Pais.listado.get(i+1);
+			if (MasVendido1.getCantidadVeces()<Masvendido2.getCantidadVeces()) {
+				elegido=Masvendido2;
 			}
 			else {
-				winCountry = MasVendido1;
+				elegido=MasVendido1;
 			}
 		}
-		return winCountry;
+		return elegido;
 	}
 }

@@ -2,101 +2,106 @@ package vehiculos;
 
 public class Vehiculo {
 	
-	protected String placa;
-	protected int puertas;
-	protected int velocidadMaxima;
-	protected String nombre;
-	protected int precio;
-	protected int peso;
-	protected String traccion;
-	protected Fabricante fabricante;
-	protected static int CantidadVehiculos;
+	private String placa;
+	private int puertas;
+	private int Velocidad;
+	private String nombre;
+	private int precio;
+	private int peso;
+	private String traccion;
+	private Fabricante fabricante;
+	private static  int cantidadVehiculos;
 	
-	public Vehiculo(String plate, int doors, int speed, String name, int precio, int peso, String traction, String maker) {
-		this.placa = plate;
-		this.puertas = doors;
-		this.velocidadMaxima = speed;
-		this.nombre = name;
-		this.precio = precio;
-		this.peso = peso;
-		this.traccion = traction;
-		this.fabricante = maker;
-		CantidadVehiculos++;
-	}
 	
-	public Vehiculo() {CantidadVehiculos++;}
-	
-	public String vehiculosPorTipo() {
-		return "Automoviles: " + Automovil.getCantidadAutomoviles() + "\n" +
-				"Camionetas: " + Camioneta.getCantidadCamionetas() + "\n" +
-				"Camiones: " + Camion.getCantidadCamiones();
+	public Vehiculo(String placa,int puertas,int velocidad,String nombre, int precio, int peso,  String traccion, Fabricante fabricante){
+		this.placa=placa;
+		this.puertas=puertas;
+		this.Velocidad= velocidad;
+		this.nombre=nombre;
+		this.precio=precio;
+		this.peso=peso;
+		this.traccion=traccion;
+		this.fabricante=fabricante;
+		cantidadVehiculos++;
+
+		this.fabricante.vecesFabricante++;
+		this.fabricante.pais.VecesPais++;
 	}
 	
 	public String getPlaca() {
 		return placa;
 	}
-	
-	public int getPuertas() {
-		return puertas;
+
+    public void setPlaca(String placa) {
+    	this.placa = placa;
+    }
+    
+    public int getPuertas() {
+    	return puertas;
+    }
+
+    public void setPuertas(int puertas) {
+    	this.puertas = puertas;
+    }
+	    
+    public int getVelocidadMaxima() {
+    	return Velocidad;
+    }
+
+    public void setVelocidadMaxima(int Velocidad) {
+    	this.Velocidad = Velocidad;
+    }
+  
+    public String getNombre() {
+    	return nombre;
+    }
+
+    public void setNombre(String nombre) {
+    	this.nombre = nombre;
 	}
 	
-	public int getVelocidadMaxima() {
-		return velocidadMaxima;
-	}
-	
-	public String getNombre() {
-		return nombre;
-	}
-	
-	public double getPrecio() {
-		return precio;
-	}
-	
-	public double getPeso() {
-		return peso;
-	}
-	
-	public String getTraccion() {
-		return traccion;
-	}
-	
-	public Fabricante getFabricante() {
-		return fabricante;
-	}
-	
+    public int getPrecio() {
+    	return precio;
+    }
+
+    public void setPrecio(int precio) {
+    	this.precio = precio;
+    }
+	    
+    public int getPeso() {
+    	return peso;
+    }
+
+    public void setPeso(int peso) {
+    	this.peso = peso;
+    }
+    
+    public String getTraccion() {
+    	return traccion;
+    }
+    
+    public void setTraccion(String traccion) {
+    	this.traccion = traccion;
+    }
+    
+    public Fabricante getFabricante() {
+    	return fabricante;
+    }
+    
+    public void setFabricante(Fabricante fabricante) {
+    	this.fabricante = fabricante;
+    }
+    
 	public static int getCantidadVehiculos() {
-		return CantidadVehiculos;
+		return cantidadVehiculos;
 	}
 	
-	public void setPlaca(String plate) {
-		this.placa = plate;
+	public static void setCantidadVehiculos(int cant) {
+		cantidadVehiculos=cant;	
 	}
-	
-	public void setPuertas(int doors) {
-		this.puertas = doors;
-	}
-	
-	public void setVelocidadMaxima(int speed) {
-		this.velocidadMaxima = speed;
-	}
-	
-	public void setNombre(String name) {
-		this.nombre = name;
-	}
-	
-	public void setPrecio(int precio) {
-		this.precio = precio;
-	}
-	
-	public void setPeso(int peso) {
-		this.peso = peso;
-	}
-	
-	public void setTraccion(String traction) {
-		this.traccion = traction;
-	}
-	
-	public void setFabricante(Fabricante maker) {
-		this.fabricante = maker;
+	    
+	public static  String  vehiculoPOrTipo() {
+		String text = "Automoviles: " + Automovil.getNumeroAutomovil() + "\nCamionetas: " + Camioneta.getNumeroCamioneta() + "\nCamiones: " + Camion.getNumeroCamion();
+		return text;
 	}
 }

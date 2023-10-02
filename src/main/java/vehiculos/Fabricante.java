@@ -5,55 +5,51 @@ import java.util.ArrayList;
 public class Fabricante {
 	
 	private String nombre;
-	protected País pais;
-	protected int countMaker;
-	private static Fabricante makerWin;
-	protected static List<Fabricante> winMaker = new ArrayList<>();
+	protected Pais pais;
+	protected int vecesFabricante;
+	private static Fabricante fabricanteElegido;
+	protected  static List<Fabricante>elegidoFab=new ArrayList<>();
 	
-
-	public Fabricante(String name, País country) {
-		this.nombre = name;
-		this.pais = country;
-		winMaker.add(this);
+	public Fabricante(String nombre, Pais pais) {
+		this.nombre=nombre;
+		this.pais=pais;
+		elegidoFab.add(this);
 	}
 	
-	public Fabricante() {
-		this(null, null);
+	public  Fabricante() {
 	}
 	
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 	
-	public País getPais() {
+	public void setNombre(String nombre) {
+		this.nombre=nombre;
+	}
+	
+	public Pais getPais() {
 		return pais;
 	}
 	
+	public void setPais(Pais pais) {
+		this.pais=pais;
+	}
+	
 	public int getVecesFabricante() {
-		return countMaker;
+		return vecesFabricante;
 	}
 	
-	public void setNombre(String name) {
-		this.nombre = name;
-	}
-	
-	public void setPais(País country) {
-		this.pais = country;
-	}
-	
-	public static Fabricante fabricaMayorVentas() {
-		for(int i = 0; i<(winMaker.size())-1; i++) {
-			Fabricante MasVendido1 = winMaker.get(0);
-			Fabricante MasVendido2 = winMaker.get(i+1);
-			if (MasVendido1.getVecesFabricante() > MasVendido2.getVecesFabricante()) {
-				makerWin = MasVendido1;
+	public static  Fabricante fabricaMayorVentas () {
+		for(int i=0;i<(elegidoFab.size())-1; i++ ) {
+			Fabricante MasVendido1=elegidoFab.get(0);
+			Fabricante MasVendido2=elegidoFab.get(i+1);
+			if (MasVendido1.getVecesFabricante()>MasVendido2.getVecesFabricante()) {
+				fabricanteElegido=MasVendido1;
 			}
-			
 			else {
-				makerWin = MasVendido2;
+				fabricanteElegido=MasVendido2;
 			}
 		}
-		return makerWin;
+		return fabricanteElegido;
 	}
-	
 }
