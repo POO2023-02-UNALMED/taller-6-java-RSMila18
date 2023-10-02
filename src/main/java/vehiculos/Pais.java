@@ -1,14 +1,15 @@
 package vehiculos;
 
 public class Pais {
-private String nombre;
+	
+	protected String nombre;
 	
 	public Pais(String name) {
 		this.nombre = name;
 	}
 	
 	public Pais() {
-		this(null)
+		this(null);
 	}
 	
 	public String getNombre() {

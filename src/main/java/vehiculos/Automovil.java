@@ -1,4 +1,5 @@
 package vehiculos;
+import java.util.ArrayList;
 
 public class Automovil extends Vehiculo{
 	
@@ -22,7 +23,7 @@ public class Automovil extends Vehiculo{
 	
 	public static int cantidadAutomoviles() {
 		return Automovil.listado.size();
-    }
+	}
 	
 	public int getPuestos() {
 		return puestos;
