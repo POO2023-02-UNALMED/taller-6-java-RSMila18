@@ -2,7 +2,7 @@ package vehiculos;
 
 import java.util.ArrayList;
 
-public class Camioneta extends Vehículo{
+public class Camioneta extends Vehiculo{
 
 		protected boolean volco;
 		protected static ArrayList<Camioneta> listado = new ArrayList<Camioneta>();
