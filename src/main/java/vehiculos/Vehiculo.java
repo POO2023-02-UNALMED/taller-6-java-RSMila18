@@ -6,13 +6,13 @@ public class Vehiculo {
 	protected int puertas;
 	protected int velocidadMaxima;
 	protected String nombre;
-	protected double precio;
-	protected double peso;
+	protected int precio;
+	protected int peso;
 	protected String traccion;
 	protected Fabricante fabricante;
 	protected static int CantidadVehiculos;
 	
-	public Vehiculo(String plate, int doors, double speed, String name, double precio, double peso, String traction, String maker) {
+	public Vehiculo(String plate, int doors, int speed, String name, int precio, int peso, String traction, String maker) {
 		this.placa = plate;
 		this.puertas = doors;
 		this.velocidadMaxima = speed;
@@ -27,8 +27,8 @@ public class Vehiculo {
 	public Vehiculo() {CantidadVehiculos++;}
 	
 	public String vehiculosPorTipo() {
-		return "Automoviles: " + Automovil.cantidadAutomoviles() + "\n"
-				"Camionetas: " + Camioneta.cantidadCamionetas() + "\n"
+		return "Automoviles: " + Automovil.cantidadAutomoviles() + "\n" +
+				"Camionetas: " + Camioneta.cantidadCamionetas() + "\n" +
 				"Camiones: " + Camion.cantidadCamiones();
 	}
 	
@@ -80,11 +80,11 @@ public class Vehiculo {
 		this.nombre = name;
 	}
 	
-	public void setPrecio(double precio) {
+	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 	
-	public void setPeso(double peso) {
+	public void setPeso(int peso) {
 		this.peso = peso;
 	}
 	
